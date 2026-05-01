@@ -26,8 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
-.env
+# env files — commit non-secret defaults in .env, keep secrets in .env.local
 .env*.local
 .env.local
 .env.development.local
