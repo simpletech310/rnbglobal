@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { CheckCircle2, Send } from "lucide-react";
 import { FormField, Input, Select, Textarea } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
 
@@ -35,9 +35,12 @@ export function QuoteForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-gold-200 bg-gold-50 p-6 sm:p-8">
-        <p className="text-lg font-semibold text-navy-900 sm:text-xl">Got it — we'll be in touch shortly.</p>
-        <p className="mt-2 text-sm text-steel-700 sm:text-base">
+      <div className="rounded-2xl border border-signal-300/60 bg-signal-50/60 p-7 sm:p-8">
+        <CheckCircle2 className="h-8 w-8 text-signal-600" />
+        <p className="mt-5 font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl">
+          Got it — we'll be in touch shortly.
+        </p>
+        <p className="mt-3 text-base text-ink-600">
           You should hear back within one business day with a transparent quote and next steps.
         </p>
       </div>
@@ -45,12 +48,12 @@ export function QuoteForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6" noValidate>
+    <form onSubmit={onSubmit} className="space-y-8" noValidate>
       <input type="text" name="company_website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
-      <div>
-        <p className="eyebrow">Step 1</p>
-        <h2 className="mt-1 text-2xl sm:text-3xl">Tell us who you are.</h2>
+      <div className="border-b border-ink-200/70 pb-1">
+        <span className="mono-tag text-signal-600">01 · Identity</span>
+        <h2 className="mt-2 text-2xl sm:text-[1.75rem]">Tell us who you are.</h2>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -82,9 +85,9 @@ export function QuoteForm() {
         </FormField>
       </div>
 
-      <div className="border-t border-navy-100 pt-6">
-        <p className="eyebrow">Step 2</p>
-        <h2 className="mt-1 text-2xl sm:text-3xl">What kind of coverage?</h2>
+      <div className="border-b border-ink-200/70 pb-1 pt-4">
+        <span className="mono-tag text-signal-600">02 · Coverage</span>
+        <h2 className="mt-2 text-2xl sm:text-[1.75rem]">What kind of coverage?</h2>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -124,9 +127,12 @@ export function QuoteForm() {
         <Textarea id="message" name="message" rows={5} placeholder="Site details, special requirements, prior security experience, etc." />
       </FormField>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-steel-500">
-          By submitting, you agree to our <a href="/privacy" className="underline">Privacy Policy</a>.
+      <div className="flex flex-col gap-3 border-t border-ink-200/70 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-ink-500">
+          By submitting, you agree to our{" "}
+          <a href="/privacy" className="underline decoration-signal-500 decoration-2 underline-offset-4 hover:text-ink-900">
+            Privacy Policy
+          </a>.
         </p>
         <Button type="submit" size="lg" disabled={submitting} className="w-full sm:w-auto">
           {submitting ? "Sending…" : (<><Send className="h-4 w-4" /> Send quote request</>)}

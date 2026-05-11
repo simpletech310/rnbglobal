@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { CheckCircle2, Send } from "lucide-react";
 import { FormField, Input, Select, Textarea } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
 
@@ -42,15 +42,21 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-gold-200 bg-gold-50 p-6 text-navy-900 sm:p-8">
-        <p className="text-lg font-semibold sm:text-xl">Thanks — your message is on its way.</p>
-        <p className="mt-2 text-sm text-steel-700 sm:text-base">
-          We respond same business day. If it's urgent, call <a href="tel:+13104383044" className="font-semibold underline">310-438-3044</a>.
+      <div className="rounded-2xl border border-signal-300/60 bg-signal-50/60 p-7 sm:p-8">
+        <CheckCircle2 className="h-8 w-8 text-signal-600" />
+        <p className="mt-5 font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl">
+          Thanks — your message is on its way.
+        </p>
+        <p className="mt-3 text-base text-ink-600">
+          We respond same business day. If it's urgent, call{" "}
+          <a href="tel:+13104383044" className="font-semibold text-ink-900 underline decoration-signal-500 decoration-2 underline-offset-4">
+            310-438-3044
+          </a>.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-5 text-sm font-semibold text-navy-900 underline"
+          className="ring-focus mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-ink-900 hover:text-signal-600"
         >
           Send another message
         </button>
@@ -59,11 +65,13 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5" noValidate>
+    <form onSubmit={onSubmit} className="space-y-6" noValidate>
       <input type="text" name="company_website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
       <fieldset>
-        <legend className="mb-2 block text-sm font-semibold text-navy-900">What's this about?</legend>
+        <legend className="mb-3 block font-mono text-[0.7rem] uppercase tracking-[0.16em] text-ink-500">
+          What's this about?
+        </legend>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
           {(
             [
@@ -74,10 +82,10 @@ export function ContactForm() {
           ).map((opt) => (
             <label
               key={opt.id}
-              className={`ring-focus flex cursor-pointer items-center justify-center rounded-lg border px-3 py-3 text-sm font-semibold transition-colors ${
+              className={`ring-focus flex cursor-pointer items-center justify-center rounded-lg border px-3 py-3.5 text-sm font-semibold transition-all duration-200 ${
                 topic === opt.id
-                  ? "border-navy-900 bg-navy-900 text-white"
-                  : "border-navy-200 bg-white text-navy-900 hover:bg-navy-50"
+                  ? "border-ink-900 bg-ink-900 text-bone-50"
+                  : "border-ink-200 bg-bone-50 text-ink-800 hover:border-ink-300 hover:bg-bone-100"
               }`}
             >
               <input
@@ -146,9 +154,12 @@ export function ContactForm() {
         <Textarea id="message" name="message" required rows={5} />
       </FormField>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-steel-500">
-          By submitting, you agree to our <a href="/privacy" className="underline">Privacy Policy</a>.
+      <div className="flex flex-col gap-3 border-t border-ink-200/70 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-ink-500">
+          By submitting, you agree to our{" "}
+          <a href="/privacy" className="underline decoration-signal-500 decoration-2 underline-offset-4 hover:text-ink-900">
+            Privacy Policy
+          </a>.
         </p>
         <Button type="submit" size="lg" disabled={submitting} className="w-full sm:w-auto">
           {submitting ? "Sending…" : (<><Send className="h-4 w-4" /> Send message</>)}
