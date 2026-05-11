@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Lock, Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { site } from "@/content/site";
 import { services } from "@/content/services";
@@ -120,6 +120,25 @@ export function Footer() {
                 {site.ppoLicense}
               </p>
             </div>
+            <a
+              href="https://dutyhq.4everforward.net/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ring-focus-dark group mt-4 inline-flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 transition-colors hover:border-signal-400/50 hover:bg-white/[0.04]"
+            >
+              <span className="flex items-center gap-3">
+                <Lock className="h-3.5 w-3.5 text-signal-400" />
+                <span>
+                  <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-bone-300/70">
+                    Staff & Officers
+                  </span>
+                  <span className="mt-0.5 block text-sm font-medium text-bone-50">
+                    Duty HQ login
+                  </span>
+                </span>
+              </span>
+              <ArrowUpRight className="h-4 w-4 text-bone-300 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-signal-400" />
+            </a>
           </div>
         </div>
       </div>
@@ -129,10 +148,19 @@ export function Footer() {
           <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bone-300/60">
             © {year} {site.name}. All rights reserved.
           </p>
-          <div className="flex gap-6 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bone-300/70">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bone-300/70">
             <Link className="hover:text-bone-50" href="/privacy">Privacy</Link>
             <Link className="hover:text-bone-50" href="/terms">Terms</Link>
             <Link className="hover:text-bone-50" href="/faq">FAQ</Link>
+            <a
+              className="inline-flex items-center gap-1.5 hover:text-bone-50"
+              href="https://dutyhq.4everforward.net/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Staff Login
+              <ArrowUpRight className="h-3 w-3" />
+            </a>
           </div>
         </div>
       </div>
