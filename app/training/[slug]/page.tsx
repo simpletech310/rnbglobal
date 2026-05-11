@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BadgeCheck, Check, Clock, DollarSign } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, Check, Clock, DollarSign } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import { CTASection } from "@/components/CTASection";
+import { Button } from "@/components/ui/Button";
 import { training, getTraining } from "@/content/training";
+import { photos } from "@/content/photos";
 import { buildMetadata } from "@/lib/seo";
 import { courseSchema } from "@/lib/schema";
 
@@ -27,89 +28,131 @@ export default async function TrainingDetail({ params }: { params: Promise<{ slu
   const t = getTraining(slug);
   if (!t) notFound();
 
+  const photo = photos.trainingPrograms[t.slug];
+
   return (
     <>
-      <PageHero eyebrow="Training" title={t.name} intro={t.short}>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold text-white">
-          <Clock className="h-4 w-4 text-gold-300" /> {t.hours}
+      <PageHero
+        eyebrow="Training"
+        title={t.name}
+        intro={t.short}
+        image={photo?.src}
+        imageAlt={photo?.alt}
+      >
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bone-50 backdrop-blur-sm">
+          <Clock className="h-3 w-3 text-signal-400" /> {t.hours}
         </span>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold text-white">
-          <DollarSign className="h-4 w-4 text-gold-300" /> {t.price}
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bone-50 backdrop-blur-sm">
+          <DollarSign className="h-3 w-3 text-signal-400" /> {t.price}
         </span>
         {t.bsisAligned && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-500 px-3 py-1.5 text-sm font-semibold text-navy-950">
-            <BadgeCheck className="h-4 w-4" /> BSIS-aligned
+          <span className="inline-flex items-center gap-2 rounded-full bg-signal-500 px-3.5 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink-900">
+            <BadgeCheck className="h-3 w-3" /> BSIS Aligned
           </span>
         )}
       </PageHero>
 
-      <section className="container-x py-12 sm:py-16 lg:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
-          <div>
-            <p className="text-base text-steel-700 sm:text-lg">{t.summary}</p>
-
-            <h3 className="mt-10">What you'll learn</h3>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {t.learn.map((item) => (
-                <li key={item} className="flex items-start gap-3 rounded-xl border border-navy-100 bg-navy-50/40 px-4 py-3">
-                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
-                  <span className="text-sm text-navy-900 sm:text-base">{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="mt-10">What you need to enroll</h3>
-            <ul className="mt-4 space-y-2 text-base text-steel-700">
-              {t.requirements.map((r) => (
-                <li key={r} className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
-                  <span>{r}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-10 rounded-2xl border border-gold-200 bg-gold-50 p-5 sm:p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold-800">You'll walk away with</p>
-              <p className="mt-2 text-base font-semibold text-navy-900 sm:text-lg">{t.outcome}</p>
-            </div>
-          </div>
-
-          <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-2xl border border-navy-100 bg-navy-950 p-6 text-white sm:p-8">
-              <p className="eyebrow text-gold-400">Enroll</p>
-              <div className="mt-3 flex items-baseline gap-2">
-                <span className="text-4xl font-bold sm:text-5xl">{t.price}</span>
-                <span className="text-sm text-navy-200">· {t.hours}</span>
-              </div>
-              <p className="mt-4 text-sm text-navy-100">
-                Send your name and we'll reply with the next available class dates and what to bring.
+      <section className="bg-bone-100">
+        <div className="container-x py-16 sm:py-20 lg:py-24">
+          <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
+            <div>
+              <p className="font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl sm:leading-snug">
+                {t.summary}
               </p>
-              <Link
-                href={`/contact?topic=training&course=${encodeURIComponent(t.name)}`}
-                className="ring-focus mt-5 inline-flex w-full items-center justify-center rounded-lg bg-gold-500 px-5 py-3 text-base font-semibold text-navy-950 hover:bg-gold-400"
-              >
-                Inquire about this class
-              </Link>
-              <p className="mt-3 text-center text-xs text-navy-300">Or call 310-438-3044</p>
+
+              <div className="mt-12">
+                <span className="eyebrow">
+                  <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+                  What you'll learn
+                </span>
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {t.learn.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl border border-ink-200/70 bg-white px-4 py-3.5"
+                    >
+                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-signal-500" />
+                      <span className="text-sm text-ink-900 sm:text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-12">
+                <span className="eyebrow">
+                  <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+                  What you need to enroll
+                </span>
+                <ul className="mt-5 space-y-3 text-base text-ink-700">
+                  {t.requirements.map((r) => (
+                    <li key={r} className="flex items-start gap-3">
+                      <span className="mt-2.5 h-1 w-3 shrink-0 bg-signal-500" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-12 rounded-2xl border border-signal-300/60 bg-signal-50/70 p-6 sm:p-7">
+                <span className="eyebrow eyebrow-signal">
+                  <span aria-hidden className="inline-block h-px w-6 bg-signal-500/70" />
+                  You'll walk away with
+                </span>
+                <p className="mt-3 font-display text-lg text-ink-900 sm:text-xl">{t.outcome}</p>
+              </div>
             </div>
 
-            <div className="mt-5 rounded-2xl border border-navy-100 bg-white p-5 sm:p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold-700">Other classes</p>
-              <ul className="mt-4 divide-y divide-navy-100">
-                {training.filter((x) => x.slug !== t.slug).slice(0, 5).map((o) => (
-                  <li key={o.slug}>
-                    <Link
-                      href={`/training/${o.slug}`}
-                      className="flex items-center justify-between gap-3 py-3 text-sm font-semibold text-navy-900 hover:text-gold-700"
-                    >
-                      <span>{o.name.replace(/\s*\(.+?\)\s*/g, "")}</span>
-                      <span className="text-xs text-steel-500">{o.price}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
+            <aside className="lg:sticky lg:top-28 lg:self-start">
+              <div className="rounded-2xl border border-white/10 bg-ink-900 p-7 text-bone-50 sm:p-8">
+                <span className="eyebrow eyebrow-light">
+                  <span aria-hidden className="inline-block h-px w-6 bg-bone-300/60" />
+                  Enroll
+                </span>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="font-display text-5xl font-semibold tracking-[-0.03em] sm:text-6xl">
+                    {t.price}
+                  </span>
+                  <span className="font-mono text-sm text-bone-300">· {t.hours}</span>
+                </div>
+                <p className="mt-4 text-sm text-bone-200/80">
+                  Send your name and we'll reply with the next available class dates and what to bring.
+                </p>
+                <Button
+                  href={`/contact?topic=training&course=${encodeURIComponent(t.name)}`}
+                  size="lg"
+                  className="mt-6 w-full"
+                >
+                  Inquire about this class
+                </Button>
+                <p className="mt-4 text-center font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bone-300/70">
+                  Or call 310-438-3044
+                </p>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-ink-200/70 bg-white p-6 sm:p-7">
+                <span className="eyebrow">
+                  <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+                  Other classes
+                </span>
+                <ul className="mt-4 divide-y divide-ink-200/70">
+                  {training.filter((x) => x.slug !== t.slug).slice(0, 5).map((o) => (
+                    <li key={o.slug}>
+                      <Link
+                        href={`/training/${o.slug}`}
+                        className="group flex items-center justify-between gap-3 py-3 text-sm font-semibold text-ink-900 hover:text-signal-600"
+                      >
+                        <span>{o.name.replace(/\s*\(.+?\)\s*/g, "")}</span>
+                        <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-ink-500 group-hover:text-signal-600">
+                          {o.price}
+                          <ArrowUpRight className="h-3.5 w-3.5" />
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 

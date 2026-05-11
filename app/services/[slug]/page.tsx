@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
-import { Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { CTASection } from "@/components/CTASection";
+import { Button } from "@/components/ui/Button";
 import { services, getService } from "@/content/services";
+import { photos } from "@/content/photos";
 import { buildMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
 
@@ -28,79 +30,118 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
   if (!s) notFound();
 
   const otherServices = services.filter((x) => x.slug !== s.slug);
+  const photo = photos.services[s.slug];
 
   return (
     <>
-      <PageHero eyebrow="Services" title={s.name} intro={s.short} />
-      <section className="container-x py-12 sm:py-16 lg:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
-          <div>
-            <p className="text-base text-steel-700 sm:text-lg">{s.summary}</p>
+      <PageHero
+        eyebrow="Services"
+        title={s.name}
+        intro={s.short}
+        image={photo?.src}
+        imageAlt={photo?.alt}
+      />
 
-            <h3 className="mt-10">What's included</h3>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {s.whatsIncluded.map((item) => (
-                <li key={item} className="flex items-start gap-3 rounded-xl border border-navy-100 bg-navy-50/40 px-4 py-3">
-                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
-                  <span className="text-sm text-navy-900 sm:text-base">{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="mt-10">Who it's for</h3>
-            <ul className="mt-4 space-y-2 text-base text-steel-700">
-              {s.whoFor.map((w) => (
-                <li key={w} className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
-                  <span>{w}</span>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="mt-10">Sample deployments</h3>
-            <ul className="mt-4 space-y-2.5 text-base text-steel-700">
-              {s.scenarios.map((sc) => (
-                <li key={sc} className="rounded-lg bg-white px-4 py-3 ring-1 ring-navy-100">
-                  {sc}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-2xl border border-navy-100 bg-navy-950 p-6 text-white sm:p-8">
-              <p className="eyebrow text-gold-400">Get a quote</p>
-              <p className="mt-3 text-lg font-semibold sm:text-xl">
-                Pricing is post-specific — coverage hours, armed status, and number of officers all factor in.
+      <section className="bg-bone-100">
+        <div className="container-x py-16 sm:py-20 lg:py-24">
+          <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
+            <div>
+              <p className="font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl sm:leading-snug">
+                {s.summary}
               </p>
-              <p className="mt-3 text-sm text-navy-100">
-                Tell us the basics and we'll send a transparent quote, usually same business day.
-              </p>
-              <Link
-                href="/request-quote"
-                className="ring-focus mt-5 inline-flex w-full items-center justify-center rounded-lg bg-gold-500 px-5 py-3 text-base font-semibold text-navy-950 hover:bg-gold-400"
-              >
-                Request a Quote
-              </Link>
-            </div>
 
-            <div className="mt-5 rounded-2xl border border-navy-100 bg-white p-5 sm:p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold-700">Other services</p>
-              <ul className="mt-4 divide-y divide-navy-100">
-                {otherServices.map((o) => (
-                  <li key={o.slug}>
-                    <Link
-                      href={`/services/${o.slug}`}
-                      className="flex items-center justify-between gap-3 py-3 text-sm font-semibold text-navy-900 hover:text-gold-700"
+              <div className="mt-12">
+                <span className="eyebrow">
+                  <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+                  What's included
+                </span>
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {s.whatsIncluded.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl border border-ink-200/70 bg-white px-4 py-3.5"
                     >
-                      {o.name}
-                      <span aria-hidden>→</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-signal-500" />
+                      <span className="text-sm text-ink-900 sm:text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-12">
+                <span className="eyebrow">
+                  <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+                  Who it's for
+                </span>
+                <ul className="mt-5 space-y-3 text-base text-ink-700">
+                  {s.whoFor.map((w) => (
+                    <li key={w} className="flex items-start gap-3">
+                      <span className="mt-2.5 h-1 w-3 shrink-0 bg-signal-500" />
+                      <span>{w}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-12">
+                <span className="eyebrow">
+                  <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+                  Sample deployments
+                </span>
+                <ul className="mt-5 space-y-3">
+                  {s.scenarios.map((sc, i) => (
+                    <li
+                      key={sc}
+                      className="flex items-start gap-4 rounded-xl border border-ink-200/70 bg-white px-5 py-4"
+                    >
+                      <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink-900 font-mono text-[0.65rem] tracking-[0.08em] text-signal-400">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-base text-ink-800">{sc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </aside>
+
+            <aside className="lg:sticky lg:top-28 lg:self-start">
+              <div className="rounded-2xl border border-white/10 bg-ink-900 p-7 text-bone-50 sm:p-8">
+                <span className="eyebrow eyebrow-light">
+                  <span aria-hidden className="inline-block h-px w-6 bg-bone-300/60" />
+                  Get a quote
+                </span>
+                <p className="mt-4 font-display text-lg tracking-[-0.015em] text-bone-50 sm:text-xl">
+                  Pricing is post-specific — coverage hours, armed status, and number of officers all factor in.
+                </p>
+                <p className="mt-3 text-sm text-bone-200/80">
+                  Tell us the basics and we'll send a transparent quote, usually same business day.
+                </p>
+                <Button href="/request-quote" size="lg" className="mt-6 w-full">
+                  Request a Quote
+                </Button>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-ink-200/70 bg-white p-6 sm:p-7">
+                <span className="eyebrow">
+                  <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+                  Other services
+                </span>
+                <ul className="mt-4 divide-y divide-ink-200/70">
+                  {otherServices.map((o) => (
+                    <li key={o.slug}>
+                      <Link
+                        href={`/services/${o.slug}`}
+                        className="group flex items-center justify-between gap-3 py-3 text-sm font-semibold text-ink-900 hover:text-signal-600"
+                      >
+                        {o.name}
+                        <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 

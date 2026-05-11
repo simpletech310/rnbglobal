@@ -12,30 +12,89 @@ html {
 }
 
 body {
-  @apply bg-white text-navy-900 antialiased;
-  font-feature-settings: "ss01", "cv11";
+  @apply bg-bone-100 text-ink-900 antialiased;
+  font-feature-settings: "ss01", "cv11", "ss03";
+  font-synthesis-weight: none;
 }
 
 @layer base {
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight;
+    @apply font-display text-ink-900;
+    font-feature-settings: "ss01", "ss03";
   }
-  h1 { @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold; }
-  h2 { @apply text-2xl sm:text-3xl md:text-4xl font-semibold; }
-  h3 { @apply text-xl sm:text-2xl font-semibold; }
-  h4 { @apply text-lg sm:text-xl font-semibold; }
-  p  { @apply leading-relaxed; }
-  a  { @apply transition-colors; }
-  ::selection { @apply bg-gold-300 text-navy-900; }
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.028em;
+    font-weight: 600;
+  }
+  h3 {
+    @apply text-xl sm:text-2xl;
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    font-weight: 600;
+  }
+  h4 {
+    @apply text-lg sm:text-xl;
+    letter-spacing: -0.012em;
+    font-weight: 600;
+  }
+  p { @apply leading-relaxed; }
+  a { @apply transition-colors; }
+  ::selection { @apply bg-signal-400 text-ink-900; }
 }
 
 @layer components {
   .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
   .container-narrow { @apply mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8; }
+
+  /* Mono "operations" eyebrow — uppercase, tracked, slightly above caps-x. */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-gold-600;
+    @apply inline-flex items-center gap-2 font-mono text-[0.7rem] sm:text-xs uppercase tracking-[0.18em] text-ink-500;
   }
-  .ring-focus { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2; }
+  .eyebrow-light { @apply text-bone-300; }
+  .eyebrow-signal { @apply text-signal-500; }
+
+  /* Mono tag/badge — used for stats, "OPS // EST. 1998 // CA PPO" etc. */
+  .mono-tag {
+    @apply font-mono text-[0.7rem] uppercase tracking-[0.18em];
+  }
+
+  /* Hairline divider used to frame editorial sections. */
+  .hairline {
+    @apply h-px w-full bg-ink-200/70;
+  }
+  .hairline-dark { @apply bg-white/10; }
+
+  /* Inline credential badge (icon + label) for the credentials strip. */
+  .credential {
+    @apply inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-bone-200;
+  }
+
+  .ring-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-400 focus-visible:ring-offset-2 focus-visible:ring-offset-bone-100;
+  }
+  .ring-focus-dark {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900;
+  }
+}
+
+/* Subtle entrance — applied via inline className. CSS only, no JS observers. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {

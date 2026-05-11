@@ -1,26 +1,29 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "ghost" | "outline";
+type Variant = "primary" | "secondary" | "ghost" | "outline" | "outline-light";
 type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-gold-500 text-navy-900 hover:bg-gold-400 active:bg-gold-600 shadow-sm shadow-gold-900/10",
-  secondary: "bg-navy-900 text-white hover:bg-navy-800 active:bg-navy-950",
+    "bg-signal-500 text-ink-900 hover:bg-signal-400 active:bg-signal-600 shadow-[0_1px_0_rgba(11,15,23,0.08)]",
+  secondary:
+    "bg-ink-900 text-bone-50 hover:bg-ink-800 active:bg-ink-950",
   outline:
-    "border border-navy-200 bg-white text-navy-900 hover:bg-navy-50 active:bg-navy-100",
-  ghost: "bg-transparent text-navy-900 hover:bg-navy-100/60",
+    "border border-ink-200 bg-transparent text-ink-900 hover:bg-ink-50 hover:border-ink-300 active:bg-ink-100",
+  "outline-light":
+    "border border-white/25 bg-transparent text-bone-50 hover:bg-white/10 hover:border-white/40 active:bg-white/15",
+  ghost: "bg-transparent text-ink-900 hover:bg-ink-100",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-9 px-3.5 text-sm",
-  md: "h-11 px-5 text-sm sm:text-base",
-  lg: "h-12 px-6 text-base sm:text-lg",
+  sm: "h-9 px-4 text-[0.8125rem]",
+  md: "h-11 px-5 text-sm",
+  lg: "h-[3.25rem] px-7 text-[0.95rem]",
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold tracking-tight transition-colors ring-focus disabled:opacity-60 disabled:pointer-events-none whitespace-nowrap";
+  "group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-all duration-200 ring-focus disabled:opacity-60 disabled:pointer-events-none whitespace-nowrap";
 
 type StyleProps = { variant?: Variant; size?: Size; className?: string; children?: React.ReactNode };
 
