@@ -41,22 +41,22 @@ const industryIcons: Record<string, typeof Store> = {
 const pillars = [
   {
     title: "Vetted & trained",
-    body: "Every officer is BSIS-licensed, background-checked, and post-briefed before stepping on property.",
+    body: "BSIS-licensed, background-checked, post-briefed.",
     icon: ShieldCheck,
   },
   {
     title: "Licensed & insured",
-    body: "California PPO with general liability and workers' comp. Certificates available on request.",
+    body: "California PPO. GL and workers' comp.",
     icon: BadgeCheck,
   },
   {
     title: "24/7 operations",
-    body: "Live dispatch around the clock for active clients. Real people, not call-center scripts.",
+    body: "Live dispatch for active clients. Real people.",
     icon: Clock,
   },
   {
-    title: "Local SoCal expertise",
-    body: `Headquartered in ${site.address.city} with deep coverage across LA and Orange counties.`,
+    title: "Local SoCal",
+    body: `Based in ${site.address.city}. LA and OC coverage.`,
     icon: Fingerprint,
   },
 ];
@@ -72,22 +72,22 @@ const process = [
   {
     index: "01",
     title: "Site walkthrough",
-    body: "We tour the property with you, map risk, and identify the exact coverage and posture that fits your operation.",
+    body: "We tour the property and map the coverage that fits.",
   },
   {
     index: "02",
     title: "Custom post orders",
-    body: "Written instructions tailored to your site — what to watch, who to call, how to log it. Reviewed and signed before any officer arrives.",
+    body: "Written instructions tailored to your site, signed before any officer arrives.",
   },
   {
     index: "03",
     title: "Officer deployment",
-    body: "BSIS-licensed, background-checked, uniformed officers on post. Briefed on your orders before the first shift begins.",
+    body: "Licensed, uniformed officers on post — briefed before shift one.",
   },
   {
     index: "04",
-    title: "Daily reports + checks",
-    body: "Activity reports in your inbox every shift. Supervisor patrol checks in person. Real-time incident escalation by phone.",
+    title: "Reports + checks",
+    body: "Activity reports every shift. Supervisor patrol checks in person.",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-7 max-w-xl text-base text-bone-200/85 sm:text-lg lg:text-[1.15rem] lg:leading-relaxed">
-              {site.yearsExperience}+ years guarding Southern California properties, events, and people — and the BSIS-aligned training program putting more qualified officers on California posts.
+              {site.yearsExperience}+ years guarding Southern California — plus BSIS-aligned guard training.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -221,8 +221,8 @@ export default function HomePage() {
         <div className="container-x py-20 sm:py-24">
           <SectionHeading
             eyebrow="What we do"
-            title="Two strong sides of the same business."
-            intro={`Owner-operated since ${site.founded}. The officers we deploy and the officers we certify are held to the same standard.`}
+            title="Two sides of the same business."
+            intro={`Owner-operated since ${site.founded}. Same standard for officers we deploy and officers we certify.`}
             align="center"
           />
 
@@ -244,9 +244,9 @@ export default function HomePage() {
                 </span>
               </div>
               <div className="p-6 sm:p-8">
-                <h3 className="text-2xl sm:text-[1.75rem]">From a single doorman to 24/7 portfolio coverage.</h3>
+                <h3 className="text-2xl sm:text-[1.75rem]">From a single doorman to 24/7 coverage.</h3>
                 <p className="mt-3 text-base text-ink-500">
-                  We staff every post with vetted, licensed officers and stand behind the work — daily reports, supervisor patrol checks, custom post orders.
+                  Licensed officers, daily reports, supervisor patrol checks.
                 </p>
                 <ul className="mt-6 divide-y divide-ink-200/70">
                   {services.map((s) => (
@@ -287,7 +287,7 @@ export default function HomePage() {
               <div className="p-6 sm:p-8">
                 <h3 className="text-2xl sm:text-[1.75rem]">Get the credentials that get you hired.</h3>
                 <p className="mt-3 text-base text-ink-500">
-                  BSIS-aligned California Guard Card, exposed firearm permit, baton, CPR, and more. Real instruction. Real range time.
+                  California Guard Card, firearm permit, baton, CPR, and more.
                 </p>
                 <ul className="mt-6 divide-y divide-ink-200/70">
                   {training.slice(0, 5).map((t) => (
@@ -325,7 +325,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Why R&B"
             title="The boring stuff, done excellently."
-            intro="Reports filed every shift, calls answered by real people, officers who hold themselves to the standard we set."
+            intro="Reports every shift. Calls answered by real people."
             tone="light"
           />
           <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -353,7 +353,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Industries"
               title="Properties we protect."
-              intro="Every property has a personality. Pick yours to see the playbook we use — or get in touch and we'll build one for you."
+              intro="Pick your property type — or get in touch for a custom plan."
             />
             <Link
               href="/contact"
@@ -447,45 +447,27 @@ export default function HomePage() {
       {/* FOUNDER */}
       <section className="bg-bone-100">
         <div className="container-x py-20 sm:py-24">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-ink-900 lg:max-w-none">
-              <Image
-                src={photos.founder.src}
-                alt="Raymond Baker, Founder and Owner of R&B Global Security"
-                fill
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                className="object-cover opacity-90"
-              />
-              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink-950/60 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
-                <div>
-                  <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-bone-300/80">From the founder</p>
-                  <p className="mt-1 font-display text-lg font-semibold text-bone-50">Raymond Baker</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <span className="eyebrow">
-                <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
-                Owner-operated since {site.founded}
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="eyebrow">
+              <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />
+              Owner-operated since {site.founded}
+            </span>
+            <p className="mt-6 font-display text-2xl tracking-[-0.02em] text-ink-900 sm:text-[1.875rem] sm:leading-[1.2]">
+              "Show up on time, write the report, train the officer, answer the phone. We've been doing that for {site.yearsExperience} years."
+            </p>
+            <div className="mt-8">
+              <span className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-ink-500">
+                Raymond Baker · Owner & Founder
               </span>
-              <p className="mt-6 font-display text-2xl tracking-[-0.02em] text-ink-900 sm:text-[1.875rem] sm:leading-[1.2]">
-                "I built this company because I wanted to work for a security firm that did the basics excellently — show up on time, write the report, train the officer, answer the phone. We've been doing exactly that for {site.yearsExperience} years."
-              </p>
-              <div className="mt-8 flex flex-col gap-1">
-                <span className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-ink-500">
-                  Raymond Baker · Owner & Founder
-                </span>
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/about"
-                  className="ring-focus group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-ink-900 hover:text-signal-600"
-                >
-                  Read our story
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Link>
-              </div>
+            </div>
+            <div className="mt-8">
+              <Link
+                href="/about"
+                className="ring-focus group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-ink-900 hover:text-signal-600"
+              >
+                Read our story
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </Link>
             </div>
           </div>
         </div>

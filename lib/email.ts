@@ -1,10 +1,10 @@
 import { Resend } from "resend";
 
-type SendArgs = { subject: string; html: string; replyTo?: string };
+type SendArgs = { subject: string; html: string; replyTo?: string; to?: string };
 
-export async function sendEmail({ subject, html, replyTo }: SendArgs) {
+export async function sendEmail({ subject, html, replyTo, to: toOverride }: SendArgs) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL || "info@randbglobalsecurity.com";
+  const to = toOverride || process.env.CONTACT_TO_EMAIL || "info@randbglobalsecurity.com";
   const from = process.env.CONTACT_FROM_EMAIL || "R&B Global Security <onboarding@resend.dev>";
 
   if (!apiKey) {

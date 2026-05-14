@@ -156,7 +156,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 flex flex-col gap-3 sm:flex-row">
-            <Button href="/team" variant="outline">Meet the team</Button>
+            <Button href="/careers" variant="outline">Join our team</Button>
             <Button href="/services">See our services</Button>
           </div>
         </div>
