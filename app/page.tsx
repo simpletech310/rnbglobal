@@ -126,7 +126,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="container-x relative grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-20 lg:py-32">
+        <div className="container-x relative grid gap-10 py-16 sm:py-24 sm:gap-14 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-20 lg:py-32">
           <div className="reveal">
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-bone-300">
               <span className="inline-flex items-center gap-2">
@@ -148,7 +148,7 @@ export default function HomePage() {
               {site.yearsExperience}+ years guarding Southern California — plus BSIS-aligned guard training.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-9 cta-row">
               <Button href="/request-quote" size="lg">
                 Hire Security
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -169,12 +169,12 @@ export default function HomePage() {
 
           {/* Inline credentials card */}
           <aside className="relative reveal">
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm sm:p-8">
               <div className="flex items-center justify-between">
                 <span className="mono-tag text-bone-300/80">On post since</span>
                 <span className="font-mono text-xs text-signal-400">{site.founded}</span>
               </div>
-              <div className="mt-2 font-display text-[5rem] font-semibold leading-none tracking-[-0.04em] text-bone-50 sm:text-[6rem]">
+              <div className="mt-2 font-display text-[3.75rem] font-semibold leading-none tracking-[-0.04em] text-bone-50 sm:text-[5rem] lg:text-[6rem]">
                 {site.yearsExperience}
                 <span className="text-signal-400">+</span>
               </div>
@@ -211,14 +211,14 @@ export default function HomePage() {
 
       {/* STATS */}
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20">
+        <div className="container-x py-12 sm:py-16 lg:py-20">
           <Stats items={stats} tone="light" />
         </div>
       </section>
 
       {/* TWO PATHS */}
       <section className="bg-bone-50">
-        <div className="container-x py-20 sm:py-24">
+        <div className="container-x py-14 sm:py-20 lg:py-24">
           <SectionHeading
             eyebrow="What we do"
             title="Two sides of the same business."
@@ -261,7 +261,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-7 cta-row">
                   <Button href="/request-quote">Request a Quote</Button>
                   <Button href="/services" variant="outline">All services</Button>
                 </div>
@@ -301,7 +301,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-7 cta-row">
                   <Button href="/training/guard-card">Get Your Guard Card</Button>
                   <Button href="/training" variant="outline">All classes</Button>
                 </div>
@@ -321,7 +321,7 @@ export default function HomePage() {
               "radial-gradient(40rem 22rem at 85% 10%, rgba(63,107,146,0.25) 0%, transparent 60%), radial-gradient(35rem 22rem at -5% 110%, rgba(216,146,36,0.12) 0%, transparent 70%)",
           }}
         />
-        <div className="container-x relative py-20 sm:py-24">
+        <div className="container-x relative py-14 sm:py-20 lg:py-24">
           <SectionHeading
             eyebrow="Why R&B"
             title="The boring stuff, done excellently."
@@ -348,7 +348,7 @@ export default function HomePage() {
 
       {/* INDUSTRIES */}
       <section className="bg-bone-100">
-        <div className="container-x py-20 sm:py-24">
+        <div className="container-x py-14 sm:py-20 lg:py-24">
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeading
               eyebrow="Industries"
@@ -364,7 +364,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-5 sm:mt-12">
             {industries.map((i, idx) => {
               const photo = photos.industries[i.slug];
               if (!photo) return null;
@@ -392,7 +392,7 @@ export default function HomePage() {
 
       {/* PROCESS */}
       <section className="bg-bone-50">
-        <div className="container-x py-20 sm:py-24">
+        <div className="container-x py-14 sm:py-20 lg:py-24">
           <SectionHeading
             eyebrow="How we operate"
             title="The four steps before an officer ever steps on your property."
@@ -413,7 +413,7 @@ export default function HomePage() {
               "radial-gradient(40rem 22rem at 10% -10%, rgba(216,146,36,0.15) 0%, transparent 60%)",
           }}
         />
-        <div className="container-x relative py-20 sm:py-24">
+        <div className="container-x relative py-14 sm:py-20 lg:py-24">
           <SectionHeading
             eyebrow="What clients say"
             title="Reports from the field."
@@ -446,7 +446,7 @@ export default function HomePage() {
 
       {/* FOUNDER */}
       <section className="bg-bone-100">
-        <div className="container-x py-20 sm:py-24">
+        <div className="container-x py-14 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-3xl text-center">
             <span className="eyebrow">
               <span aria-hidden className="inline-block h-px w-6 bg-ink-300" />

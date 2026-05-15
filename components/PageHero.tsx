@@ -57,7 +57,7 @@ export function PageHero({
       />
       <div
         className={cn(
-          "container-x relative py-20 sm:py-24 lg:py-32",
+          "container-x relative py-16 sm:py-24 lg:py-32",
           isCenter && "text-center",
         )}
       >
@@ -88,8 +88,8 @@ export function PageHero({
         {children && (
           <div
             className={cn(
-              "mt-9 flex flex-wrap gap-3",
-              isCenter && "justify-center",
+              "mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap",
+              isCenter && "sm:justify-center",
             )}
           >
             {children}

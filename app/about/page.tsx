@@ -54,13 +54,13 @@ export default function AboutPage() {
       />
 
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <Stats items={stats} tone="light" />
         </div>
       </section>
 
       <section className="bg-bone-50">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
             <div>
               <p className="font-display text-2xl tracking-[-0.02em] text-ink-900 sm:text-[1.75rem] sm:leading-[1.25]">
@@ -163,7 +163,7 @@ export default function AboutPage() {
             </aside>
           </div>
 
-          <div className="mt-16 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-12 cta-row sm:mt-16">
             <Button href="/careers" variant="outline">Join our team</Button>
             <Button href="/services">See our services</Button>
           </div>

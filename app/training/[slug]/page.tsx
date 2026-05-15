@@ -63,7 +63,7 @@ export default async function TrainingDetail({ params }: { params: Promise<{ slu
       </PageHero>
 
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
             <div>
               <p className="font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl sm:leading-snug">

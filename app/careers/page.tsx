@@ -50,7 +50,7 @@ export default function CareersPage() {
       </section>
 
       <section className="bg-bone-50">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
             <aside>
               <span className="eyebrow">

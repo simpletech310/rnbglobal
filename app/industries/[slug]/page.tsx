@@ -48,7 +48,7 @@ export default async function IndustryDetail({ params }: { params: Promise<{ slu
       />
 
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <p className="max-w-3xl font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl sm:leading-snug">
             {i.intro}
           </p>

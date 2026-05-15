@@ -23,15 +23,15 @@ body {
     font-feature-settings: "ss01", "ss03";
   }
   h1 {
-    font-size: clamp(2.5rem, 6vw, 5.5rem);
-    line-height: 0.98;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.25rem, 6vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.032em;
     font-weight: 600;
   }
   h2 {
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    line-height: 1.05;
-    letter-spacing: -0.028em;
+    font-size: clamp(1.75rem, 4vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.026em;
     font-weight: 600;
   }
   h3 {
@@ -53,6 +53,15 @@ body {
 @layer components {
   .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
   .container-narrow { @apply mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8; }
+
+  /* CTA row: stacks full-width on mobile, wraps inline on desktop. */
+  .cta-row {
+    @apply flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center;
+  }
+  .cta-row > a,
+  .cta-row > button {
+    @apply w-full sm:w-auto;
+  }
 
   /* Mono "operations" eyebrow — uppercase, tracked, slightly above caps-x. */
   .eyebrow {

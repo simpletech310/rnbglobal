@@ -41,7 +41,7 @@ export default function ServicesPage() {
       />
 
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
             {services.map((s, idx) => {
               const Icon = iconMap[s.icon];

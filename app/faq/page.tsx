@@ -30,7 +30,7 @@ export default function FaqPage() {
       <PageHero eyebrow="FAQ" title="Common questions, plain answers." />
 
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <div className="space-y-16">
             {groups.map((g) => {
               const items = faq.filter((f) => f.group === g.id);

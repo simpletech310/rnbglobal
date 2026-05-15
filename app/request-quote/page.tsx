@@ -35,7 +35,7 @@ export default function QuotePage() {
       />
 
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
             <div className="rounded-2xl border border-ink-200/70 bg-white p-6 sm:p-8 lg:p-10">
               <QuoteForm />

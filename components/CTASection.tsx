@@ -32,7 +32,7 @@ export function CTASection({
               "radial-gradient(40rem 22rem at 80% -10%, rgba(216,146,36,0.18) 0%, transparent 60%), radial-gradient(35rem 20rem at -10% 110%, rgba(94,134,173,0.18) 0%, transparent 70%)",
           }}
         />
-        <div className="container-x relative py-16 sm:py-24">
+        <div className="container-x relative py-14 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow eyebrow-light justify-center">
               <span aria-hidden className="inline-block h-px w-6 bg-bone-300/60" />
@@ -46,10 +46,10 @@ export function CTASection({
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 sm:gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-2">
             <a
               href="/request-quote"
-              className="ring-focus-dark group relative flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-signal-400/40 hover:bg-white/[0.05] sm:p-9"
+              className="ring-focus-dark group relative flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-signal-400/40 hover:bg-white/[0.05] sm:gap-5 sm:p-9"
             >
               <div className="flex items-start justify-between">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-signal-500 text-ink-900">
@@ -71,7 +71,7 @@ export function CTASection({
 
             <a
               href="/training/guard-card"
-              className="ring-focus-dark group relative flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-signal-400/40 hover:bg-white/[0.05] sm:p-9"
+              className="ring-focus-dark group relative flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-signal-400/40 hover:bg-white/[0.05] sm:gap-5 sm:p-9"
             >
               <div className="flex items-start justify-between">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-bone-50">
@@ -117,7 +117,7 @@ export function CTASection({
             "radial-gradient(40rem 22rem at 80% -10%, rgba(216,146,36,0.18) 0%, transparent 60%), radial-gradient(35rem 20rem at -10% 110%, rgba(94,134,173,0.18) 0%, transparent 70%)",
         }}
       />
-      <div className="container-x relative grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+      <div className="container-x relative grid gap-10 py-14 sm:py-20 lg:grid-cols-[1.4fr_1fr] lg:items-end">
         <div>
           <span className="eyebrow eyebrow-light">
             <span aria-hidden className="inline-block h-px w-6 bg-bone-300/60" />
@@ -125,7 +125,7 @@ export function CTASection({
           </span>
           <h2 className="mt-4 text-balance text-bone-50">{title}</h2>
           <p className="mt-5 max-w-xl text-base text-bone-200/85 sm:text-lg">{intro}</p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-7 cta-row">
             <Button href={primaryHref} size="lg">
               {primaryLabel}
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />

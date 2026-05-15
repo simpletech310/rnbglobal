@@ -33,7 +33,7 @@ export default function TrainingPage() {
       />
 
       <section className="bg-bone-100">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
+        <div className="container-x py-12 sm:py-20 lg:py-24">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {training.map((t, idx) => (
               <Link
