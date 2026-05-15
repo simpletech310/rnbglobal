@@ -6,10 +6,21 @@ import { training } from "@/content/training";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Security Training & Guard Card Courses",
+  title: "Security Training & California Guard Card Courses",
   description:
-    "BSIS-aligned Guard Card, firearm, baton, CPR, handcuff, and pepper spray training in Paramount, CA. Small classes, real range time, certificates the same day.",
+    "BSIS-aligned California Guard Card, exposed firearm permit, baton, CPR, handcuff, and pepper spray training in Paramount, CA. Small classes, real range time, certificates the same day.",
   path: "/training",
+  keywords: [
+    "California Guard Card class",
+    "BSIS Power to Arrest training",
+    "exposed firearm permit California",
+    "baton certification California",
+    "CPR AED certification security",
+    "pepper spray training",
+    "handcuff training",
+    "guard card Paramount CA",
+    "Los Angeles guard card school",
+  ],
 });
 
 export default function TrainingPage() {

@@ -5,9 +5,16 @@ import { site } from "@/content/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Contact Us",
-  description: `Call ${site.phone} or send a message. Headquartered at ${site.address.street}, ${site.address.city}, ${site.address.region}. Same-day response Monday through Saturday.`,
+  title: "Contact R&B Global Security",
+  description: `Call ${site.phone} or send a message. Headquartered at ${site.address.street}, ${site.address.city}, ${site.address.region}. Same-business-day response Monday through Saturday.`,
   path: "/contact",
+  keywords: [
+    "contact security company California",
+    "hire security guards quote",
+    "Paramount California security firm",
+    `${site.phone}`,
+    "R&B Global Security contact",
+  ],
 });
 
 export default function ContactPage() {

@@ -10,8 +10,16 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "About R&B Global Security",
   description:
-    "Founded in 1998, R and B Global Security is a California-licensed PPO providing contract security and BSIS-aligned training across Los Angeles and Orange counties.",
+    "Founded in 1998, R and B Global Security is a California-licensed PPO providing contract security guards and BSIS-aligned training across Los Angeles, Orange County, and the Inland Empire.",
   path: "/about",
+  keywords: [
+    "about R&B Global Security",
+    "Raymond Baker security",
+    "California PPO license",
+    "owner-operated security",
+    "Paramount California security firm",
+    "Southern California security history",
+  ],
 });
 
 const values = [

@@ -21,6 +21,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: s.name,
     description: s.summary.slice(0, 155),
     path: `/services/${s.slug}`,
+    keywords: [
+      s.name,
+      `${s.name} Los Angeles`,
+      `${s.name} Orange County`,
+      `${s.name} Southern California`,
+      `hire ${s.name.toLowerCase()}`,
+    ],
   });
 }
 

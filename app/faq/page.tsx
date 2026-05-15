@@ -7,8 +7,15 @@ import { faqSchema } from "@/lib/schema";
 export const metadata = buildMetadata({
   title: "Frequently Asked Questions",
   description:
-    "Common questions about hiring contract security, getting a California Guard Card, firearm training, and what to expect from R&B Global Security.",
+    "Answers about hiring contract security, getting a California Guard Card, exposed firearm permits, and what to expect from R&B Global Security.",
   path: "/faq",
+  keywords: [
+    "security guard FAQ California",
+    "California Guard Card requirements",
+    "how to become a security guard California",
+    "BSIS firearm permit FAQ",
+    "hire armed security California",
+  ],
 });
 
 const groups: { id: "hire" | "train" | "general"; title: string; eyebrow: string }[] = [

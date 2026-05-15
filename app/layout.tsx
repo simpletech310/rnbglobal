@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -12,11 +12,11 @@ const inter = Inter({
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
-const jetbrainsMono = JetBrains_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-plex-mono",
   display: "swap",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -28,16 +28,27 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  category: "Security Services",
   keywords: [
     "security guards California",
-    "Paramount security",
     "Los Angeles security company",
-    "guard card training",
-    "BSIS firearm training",
-    "event security",
-    "mobile patrol",
+    "Orange County security",
+    "Paramount security",
     "uniformed guards",
+    "mobile patrol",
+    "event security",
+    "armed security",
+    "guard card training",
+    "BSIS guard card",
+    "BSIS firearm training",
+    "exposed firearm permit California",
+    "CCTV installation Los Angeles",
+    "R&B Global Security",
+    "Raymond Baker security",
   ],
+  alternates: { canonical: site.url },
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
@@ -46,8 +57,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
-  twitter: { card: "summary_large_image", title: site.name, description: site.description },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: { icon: "/favicon.svg" },
+  verification: {},
 };
 
 export const viewport: Viewport = {
@@ -59,7 +86,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
       <body className="flex min-h-screen flex-col bg-bone-100 text-ink-900">
         <Header />
         <main id="main" className="flex-1">

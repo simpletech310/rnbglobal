@@ -38,30 +38,6 @@ export const training: TrainingProgram[] = [
     bsisAligned: true,
   },
   {
-    slug: "firearm",
-    name: "Firearm Training (Exposed Firearm Permit)",
-    short: "BSIS-aligned firearm course for guards seeking the exposed firearm permit.",
-    hours: "10 hours (classroom + range)",
-    price: "$260",
-    summary:
-      "Classroom instruction followed by live-fire range qualification. Covers safety, legal authority, weapon handling, and shooting fundamentals. You'll leave with the certificate required to apply for your BSIS exposed firearm permit.",
-    learn: [
-      "Firearm safety and the four cardinal rules",
-      "Legal and moral aspects of using deadly force",
-      "Weapon handling, malfunctions, and maintenance",
-      "Marksmanship fundamentals and qualification course of fire",
-      "Holster draw, reload, and recovery",
-    ],
-    requirements: [
-      "Valid California Guard Card or in process",
-      "Valid government-issued photo ID",
-      "Eye and ear protection (loaners available)",
-      "Range fees and ammunition included",
-    ],
-    outcome: "BSIS-aligned firearm training certificate for the exposed firearm permit application.",
-    bsisAligned: true,
-  },
-  {
     slug: "guard-card-processing",
     name: "Guard Card Processing Assistance",
     short: "We sit with you and submit the BSIS application correctly the first time.",
@@ -118,6 +94,30 @@ export const training: TrainingProgram[] = [
     requirements: ["No prerequisites"],
     outcome: "Two-year CPR / AED certification card.",
     bsisAligned: false,
+  },
+  {
+    slug: "firearm",
+    name: "Firearm Training (Exposed Firearm Permit)",
+    short: "BSIS-aligned firearm course for guards seeking the exposed firearm permit.",
+    hours: "10 hours (classroom + range)",
+    price: "$260",
+    summary:
+      "Classroom instruction followed by live-fire range qualification. Covers safety, legal authority, weapon handling, and shooting fundamentals. You'll leave with the certificate required to apply for your BSIS exposed firearm permit.",
+    learn: [
+      "Firearm safety and the four cardinal rules",
+      "Legal and moral aspects of using deadly force",
+      "Weapon handling, malfunctions, and maintenance",
+      "Marksmanship fundamentals and qualification course of fire",
+      "Holster draw, reload, and recovery",
+    ],
+    requirements: [
+      "Valid California Guard Card or in process",
+      "Valid government-issued photo ID",
+      "Eye and ear protection (loaners available)",
+      "Range fees and ammunition included",
+    ],
+    outcome: "BSIS-aligned firearm training certificate for the exposed firearm permit application.",
+    bsisAligned: true,
   },
   {
     slug: "handcuff",
