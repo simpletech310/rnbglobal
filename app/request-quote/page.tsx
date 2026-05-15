@@ -7,8 +7,15 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Request a Security Quote",
   description:
-    "Tell us about the post and we'll send a transparent quote — usually same business day. Uniformed guards, mobile patrol, event security, CCTV.",
+    "Tell us about the post and we'll send a transparent quote — usually same business day. Uniformed guards, mobile patrol, event security, CCTV installation across Southern California.",
   path: "/request-quote",
+  keywords: [
+    "request security quote California",
+    "security guard pricing Los Angeles",
+    "event security quote Orange County",
+    "mobile patrol quote",
+    "armed guard rates",
+  ],
 });
 
 const reassurances = [

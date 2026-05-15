@@ -5,10 +5,18 @@ import { site } from "@/content/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Careers — Security Guard Application",
+  title: "Careers — Security Guard Jobs in Southern California",
   description:
-    "We're always hiring licensed security guards across Los Angeles and Orange counties. Apply online and we'll be in touch.",
+    "We're always hiring BSIS-licensed security guards across Los Angeles, Orange County, and the Inland Empire. Apply online — day, swing, and graveyard shifts available.",
   path: "/careers",
+  keywords: [
+    "security guard jobs Los Angeles",
+    "security guard jobs Orange County",
+    "hiring security officers California",
+    "armed security jobs Southern California",
+    "guard card jobs Paramount CA",
+    "apply security guard online",
+  ],
 });
 
 const perks = [

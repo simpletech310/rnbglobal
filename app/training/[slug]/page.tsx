@@ -16,10 +16,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const t = getTraining(slug);
   if (!t) return {};
+  const cleanName = t.name.replace(/\s*\(.+?\)\s*/g, "");
   return buildMetadata({
     title: t.name,
     description: t.summary.slice(0, 155),
     path: `/training/${t.slug}`,
+    keywords: [
+      cleanName,
+      `${cleanName} California`,
+      `${cleanName} class`,
+      `${cleanName} certification`,
+      `BSIS ${cleanName}`,
+      `${cleanName} Los Angeles`,
+      `${cleanName} Paramount CA`,
+    ],
   });
 }
 

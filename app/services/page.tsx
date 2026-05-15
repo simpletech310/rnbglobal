@@ -16,10 +16,19 @@ const iconMap = {
 };
 
 export const metadata = buildMetadata({
-  title: "Security Services",
+  title: "Security Services — Guards, Patrol, Events, CCTV",
   description:
-    "Uniformed guards, mobile patrol, event security, and CCTV installation across Southern California. BSIS-licensed, insured, owner-operated.",
+    "Uniformed security guards, mobile patrol, event security, and CCTV installation across Los Angeles, Orange County, and the Inland Empire. BSIS-licensed, insured, owner-operated.",
   path: "/services",
+  keywords: [
+    "security services Southern California",
+    "hire security guards LA",
+    "mobile patrol Los Angeles",
+    "event security Orange County",
+    "CCTV installation",
+    "uniformed security officers",
+    "armed and unarmed guards",
+  ],
 });
 
 export default function ServicesPage() {
