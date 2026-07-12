@@ -21,12 +21,10 @@ import { CTASection } from "@/components/CTASection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Stats } from "@/components/Stats";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
-import { PullQuote } from "@/components/PullQuote";
 import { ImageCard } from "@/components/ImageCard";
 import { services } from "@/content/services";
 import { training } from "@/content/training";
 import { industries } from "@/content/industries";
-import { testimonials } from "@/content/testimonials";
 import { site } from "@/content/site";
 import { photos } from "@/content/photos";
 
@@ -399,47 +397,6 @@ export default function HomePage() {
           />
           <div className="mt-14">
             <ProcessTimeline steps={process} tone="light" />
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS — editorial */}
-      <section className="relative isolate overflow-hidden bg-ink-900 text-bone-50">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-40"
-          style={{
-            backgroundImage:
-              "radial-gradient(40rem 22rem at 10% -10%, rgba(216,146,36,0.15) 0%, transparent 60%)",
-          }}
-        />
-        <div className="container-x relative py-14 sm:py-20 lg:py-24">
-          <SectionHeading
-            eyebrow="What clients say"
-            title="Reports from the field."
-            intro="Names withheld for our clients' privacy — full references on request."
-            tone="light"
-          />
-          <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <PullQuote
-              quote={testimonials[0].quote}
-              attribution={testimonials[0].attribution}
-              role={testimonials[0].role}
-              tone="dark"
-              size="lg"
-            />
-            <div className="space-y-10">
-              {testimonials.slice(1).map((t) => (
-                <PullQuote
-                  key={t.attribution}
-                  quote={t.quote}
-                  attribution={t.attribution}
-                  role={t.role}
-                  tone="dark"
-                  size="md"
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
