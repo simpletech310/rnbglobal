@@ -56,16 +56,16 @@ export const photos = {
       alt: "Uniformed security officer on post at a building entrance.",
     },
     patrol: {
-      src: unsplash("1494522855154-9297ac14b55f", 1600),
-      alt: "Marked patrol vehicle in a parking structure at night.",
+      src: "/photos/patrol.jpg",
+      alt: "Marked R&B security patrol vehicle at a commercial property at night.",
     },
     "event-security": {
       src: "/photos/industry-events.jpg",
       alt: "Crowd at a live event being managed by event security.",
     },
     "camera-installation": {
-      src: unsplash("1557804506-669a67965ba0", 1600),
-      alt: "Professional CCTV camera mounted on a building exterior.",
+      src: "/photos/camera-installation.jpg",
+      alt: "Professional CCTV security camera mounted on a building exterior.",
     },
   } as Record<string, { src: string; alt: string }>,
 
