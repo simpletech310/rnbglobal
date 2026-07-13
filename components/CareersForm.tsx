@@ -4,6 +4,8 @@ import { CheckCircle2, Send } from "lucide-react";
 import { FormField, Input, Select, Textarea } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
 
+const MAX_RESUME_BYTES = 4 * 1024 * 1024; // 4MB
+
 export function CareersForm() {
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -17,13 +19,18 @@ export function CareersForm() {
     setErrorMsg(null);
 
     const formData = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    const resume = formData.get("resume");
+    if (resume instanceof File && resume.size > 0 && resume.size > MAX_RESUME_BYTES) {
+      setStatus("error");
+      setErrorMsg("Resume file is too large. Please attach a file under 4MB.");
+      setSubmitting(false);
+      return;
+    }
 
     try {
       const res = await fetch("/api/careers", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: formData,
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || "Something went wrong.");
@@ -156,6 +163,21 @@ export function CareersForm() {
           </FormField>
           <FormField label="Start availability" htmlFor="availability" hint="When can you start?">
             <Input id="availability" name="availability" placeholder="Immediately, 2 weeks, etc." />
+          </FormField>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-ink-900">Resume</h3>
+        <div className="mt-5">
+          <FormField label="Attach your resume (optional)" htmlFor="resume" hint="PDF or Word doc, up to 4MB.">
+            <Input
+              id="resume"
+              name="resume"
+              type="file"
+              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              className="file:mr-4 file:rounded-lg file:border-0 file:bg-ink-900 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-bone-50 file:transition-colors hover:file:bg-ink-800"
+            />
           </FormField>
         </div>
       </div>
