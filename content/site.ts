@@ -22,7 +22,7 @@ export const site = {
   ],
   founded: 1998,
   yearsExperience: 27,
-  ppoLicense: "PPO# XXXXXXX",
+  ppoLicense: "PPO# 119984",
   socials: {
     instagram: "https://instagram.com/randbglobalsecurity",
     facebook: "https://facebook.com/randbglobalsecurity",

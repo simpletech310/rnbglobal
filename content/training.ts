@@ -21,7 +21,7 @@ export const training: TrainingProgram[] = [
     summary:
       "California's mandatory pre-licensing course covering Power to Arrest, weapons of mass destruction awareness, and the legal foundations of the security profession. Pass the in-class exam and we walk you through the BSIS application the same day.",
     learn: [
-      "Power to Arrest — when, how, and the limits",
+      "Power to Arrest: when, how, and the limits",
       "Public relations and observation skills",
       "Communication and report-writing fundamentals",
       "Liability, ethics, and use-of-force law",
@@ -56,7 +56,7 @@ export const training: TrainingProgram[] = [
       "Government-issued photo ID",
       "Valid email address",
     ],
-    outcome: "A submitted, complete Guard Card application — you walk out with a confirmation number.",
+    outcome: "A submitted, complete Guard Card application. You walk out with a confirmation number.",
     bsisAligned: true,
   },
   {

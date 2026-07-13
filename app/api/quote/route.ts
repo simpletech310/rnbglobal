@@ -36,7 +36,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const subject = `Quote request — ${d.organization} (${d.location})`;
+  const subject = `Quote request: ${d.organization} (${d.location})`;
 
   const internalHtml = emailShell({
     heading: subject,
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
 
   try {
     const confirmHtml = emailShell({
-      heading: "Got it — your quote request is in.",
+      heading: "Got it - your quote request is in.",
       bodyHtml: `
         <p style="margin:0 0 14px;font-size:14px;color:#141923;line-height:1.6;">Hi ${escapeHtml(d.name.split(" ")[0] || d.name)},</p>
         <p style="margin:0 0 14px;font-size:14px;color:#141923;line-height:1.6;">
@@ -84,10 +84,10 @@ export async function POST(req: Request) {
         <p style="margin:0 0 14px;font-size:14px;color:#141923;line-height:1.6;">
           Need it sooner? Call us directly at <a href="${site.phoneHref}" style="color:#B57718;font-weight:600;text-decoration:none;">${site.phone}</a>.
         </p>
-        <p style="margin:20px 0 0;font-size:13px;color:#6B7589;">— The ${site.shortName} team</p>
+        <p style="margin:20px 0 0;font-size:13px;color:#6B7589;">The ${site.shortName} team</p>
       `,
     });
-    await sendEmail({ subject: `We got your quote request — ${site.shortName}`, html: confirmHtml, to: d.email });
+    await sendEmail({ subject: `We got your quote request - ${site.shortName}`, html: confirmHtml, to: d.email });
   } catch (err) {
     console.error("[quote] failed to send confirmation to submitter:", err);
   }

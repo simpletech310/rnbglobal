@@ -50,7 +50,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title={`Built on ${site.yearsExperience} years of doing the work right.`}
-        intro={`${site.name} was founded in ${site.founded} by Raymond Baker — a security professional who'd seen enough firms cut corners and decided to build one that wouldn't.`}
+        intro={`${site.name} was founded in ${site.founded} by Raymond Baker, a security professional who'd seen enough firms cut corners and decided to build one that wouldn't.`}
       />
 
       <section className="bg-bone-100">
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 We're a Southern California security firm serving organizations that need reliable, licensed officers and individuals pursuing the California Guard Card or exposed firearm permit.
               </p>
               <p className="mt-6 text-base text-ink-600 sm:text-lg sm:leading-relaxed">
-                Our work splits roughly evenly between contract security and training — and the two sides feed each other. The instructors who teach our classes are the same people who supervise our posts. The officers who pass through our courses meet our standards before we'd ever assign them to your property.
+                Our work splits roughly evenly between contract security and training, and the two sides feed each other. The instructors who teach our classes are the same people who supervise our posts. The officers who pass through our courses meet our standards before we'd ever assign them to your property.
               </p>
               <p className="mt-5 text-base text-ink-600 sm:text-lg sm:leading-relaxed">
                 We're owner-operated. When you pick up the phone, you reach a real person, and when something goes wrong, the owner is the one who answers. That's the standard the company was built on, and it hasn't changed in {site.yearsExperience}+ years.

@@ -15,7 +15,7 @@ export const industries: Industry[] = [
     name: "Retail & Storefront",
     short: "Loss prevention, customer-safety presence, opening and closing coverage.",
     intro:
-      "Retail security is about presence and process — a uniformed officer at the door changes shrink numbers, and a closing-team escort changes how safe staff feel walking to their cars.",
+      "Retail security is about presence and process. A uniformed officer at the door changes shrink numbers, and a closing-team escort changes how safe staff feel walking to their cars.",
     painPoints: [
       "Repeat shoplifters and organized retail crime",
       "Aggressive customer incidents and de-escalation",
@@ -31,9 +31,9 @@ export const industries: Industry[] = [
     guardProfile:
       "Customer-facing officers trained in de-escalation and Power to Arrest, comfortable working alongside store associates without disrupting the customer experience.",
     postSpecs: [
-      "Greeter post — open to close, single officer",
-      "Closing-team escort — last hour of operations",
-      "Overnight mobile patrol — three randomized visits",
+      "Greeter post: open to close, single officer",
+      "Closing-team escort: last hour of operations",
+      "Overnight mobile patrol: three randomized visits",
     ],
   },
   {
@@ -83,7 +83,7 @@ export const industries: Industry[] = [
     guardProfile:
       "Front-of-house ready, business-attire-or-uniform flexible, comfortable with executive guests, building management, and IT/Facilities teams.",
     postSpecs: [
-      "Lobby concierge — 7am to 7pm weekdays",
+      "Lobby concierge: 7am to 7pm weekdays",
       "Overnight access-control rover",
       "Termination-day on-call coverage",
     ],
@@ -109,9 +109,9 @@ export const industries: Industry[] = [
     guardProfile:
       "Long-term posted officers who build relationships with residents and recognize who belongs on property.",
     postSpecs: [
-      "Gatehouse — 24/7 or evening-only",
-      "Mobile patrol — 3–6 visits per night",
-      "Amenity coverage — pool and gym hours",
+      "Gatehouse: 24/7 or evening-only",
+      "Mobile patrol: 3–6 visits per night",
+      "Amenity coverage: pool and gym hours",
     ],
   },
   {
@@ -135,8 +135,8 @@ export const industries: Industry[] = [
     guardProfile:
       "Self-directed officers comfortable working remote sites alone, trained to log everything and call dispatch first.",
     postSpecs: [
-      "Overnight on-site — 6pm to 6am",
-      "Mobile patrol portfolio — randomized 3 visits per site",
+      "Overnight on-site: 6pm to 6am",
+      "Mobile patrol portfolio: randomized 3 visits per site",
       "Lock-up and gate coverage at shift change",
     ],
   },

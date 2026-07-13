@@ -36,10 +36,10 @@ export async function POST(req: Request) {
 
   const subject =
     d.topic === "hire"
-      ? `New security inquiry — ${d.organization || d.name}`
+      ? `New security inquiry: ${d.organization || d.name}`
       : d.topic === "training"
-      ? `Training inquiry — ${d.course || "general"} — ${d.name}`
-      : `Website inquiry — ${d.name}`;
+      ? `Training inquiry: ${d.course || "general"} · ${d.name}`
+      : `Website inquiry: ${d.name}`;
 
   const internalHtml = emailShell({
     heading: subject,
@@ -80,10 +80,10 @@ export async function POST(req: Request) {
         <p style="margin:0 0 14px;font-size:14px;color:#141923;line-height:1.6;">
           If it's urgent, call us directly at <a href="${site.phoneHref}" style="color:#B57718;font-weight:600;text-decoration:none;">${site.phone}</a>.
         </p>
-        <p style="margin:20px 0 0;font-size:13px;color:#6B7589;">— The ${site.shortName} team</p>
+        <p style="margin:20px 0 0;font-size:13px;color:#6B7589;">The ${site.shortName} team</p>
       `,
     });
-    await sendEmail({ subject: `We got your message — ${site.shortName}`, html: confirmHtml, to: d.email });
+    await sendEmail({ subject: `We got your message - ${site.shortName}`, html: confirmHtml, to: d.email });
   } catch (err) {
     console.error("[contact] failed to send confirmation to submitter:", err);
   }

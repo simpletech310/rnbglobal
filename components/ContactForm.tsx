@@ -45,7 +45,7 @@ export function ContactForm() {
       <div className="rounded-2xl border border-signal-300/60 bg-signal-50/60 p-7 sm:p-8">
         <CheckCircle2 className="h-8 w-8 text-signal-600" />
         <p className="mt-5 font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl">
-          Thanks — your message is on its way.
+          Thanks, your message is on its way.
         </p>
         <p className="mt-3 text-base text-ink-600">
           We respond same business day. If it's urgent, call{" "}

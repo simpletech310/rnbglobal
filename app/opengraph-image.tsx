@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
 export const runtime = "edge";
-export const alt = `${site.name} — ${site.tagline}`;
+export const alt = `${site.name} - ${site.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -97,7 +97,7 @@ export default async function OpengraphImage() {
               lineHeight: 1.35,
             }}
           >
-            {site.yearsExperience}+ years guarding Southern California — and BSIS-aligned guard training.
+            {site.yearsExperience}+ years guarding Southern California, plus BSIS-aligned guard training.
           </div>
         </div>
 

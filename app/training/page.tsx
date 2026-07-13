@@ -29,7 +29,7 @@ export default function TrainingPage() {
       <PageHero
         eyebrow="Training"
         title="Get your Guard Card. Get armed. Get hired."
-        intro="We run the courses California requires to work as a security officer — Power to Arrest, firearm, baton, CPR, handcuff, and pepper spray — in small classes with experienced instructors."
+        intro="We run the courses California requires to work as a security officer: Power to Arrest, firearm, baton, CPR, handcuff, and pepper spray, in small classes with experienced instructors."
       />
 
       <section className="bg-bone-100">

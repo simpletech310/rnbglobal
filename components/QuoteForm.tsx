@@ -38,7 +38,7 @@ export function QuoteForm() {
       <div className="rounded-2xl border border-signal-300/60 bg-signal-50/60 p-7 sm:p-8">
         <CheckCircle2 className="h-8 w-8 text-signal-600" />
         <p className="mt-5 font-display text-xl tracking-[-0.015em] text-ink-900 sm:text-2xl">
-          Got it — we'll be in touch shortly.
+          Got it, we'll be in touch shortly.
         </p>
         <p className="mt-3 text-base text-ink-600">
           You should hear back within one business day with a transparent quote and next steps.
@@ -98,7 +98,7 @@ export function QuoteForm() {
             <option>Mobile patrol</option>
             <option>Event security</option>
             <option>Camera / CCTV install</option>
-            <option>Combination — let's discuss</option>
+            <option>Combination, let's discuss</option>
           </Select>
         </FormField>
         <FormField label="Armed or unarmed?" htmlFor="armed">

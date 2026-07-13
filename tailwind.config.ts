@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-// Modern Authority — charcoal ink, warm bone, cool steel, refined signal amber, steel-blue edge.
+// Modern Authority: charcoal ink, warm bone, cool steel, refined signal amber, steel-blue edge.
 const ink = {
   50: "#F5F6F8",
   100: "#E5E7EC",
@@ -67,14 +67,14 @@ const config: Config = {
         steel,
         signal,
         edge,
-        // Legacy aliases — recolored to the new palette so any unrebuilt surface inherits the overhaul.
+        // Legacy aliases, recolored to the new palette so any unrebuilt surface inherits the overhaul.
         navy: ink,
         gold: signal,
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-plex-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        mono: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         prose: "65ch",

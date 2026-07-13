@@ -11,7 +11,7 @@ export const faq: FaqItem[] = [
     group: "hire",
     question: "How quickly can you start coverage?",
     answer:
-      "For standard posts in Southern California we can typically deploy within 24–72 hours of a signed agreement. Same-day coverage is possible for emergencies — call us directly and we'll tell you honestly whether we can staff it.",
+      "For standard posts in Southern California we can typically deploy within 24–72 hours of a signed agreement. Same-day coverage is possible for emergencies. Call us directly and we'll tell you honestly whether we can staff it.",
   },
   {
     group: "hire",
@@ -41,7 +41,7 @@ export const faq: FaqItem[] = [
     group: "train",
     question: "Do I have to take the firearm course at R&B if I trained elsewhere?",
     answer:
-      "No. Any BSIS-aligned firearm course is accepted toward your exposed firearm permit. If you're starting from scratch we'd love to be your school — we run our class small and the range time is real.",
+      "No. Any BSIS-aligned firearm course is accepted toward your exposed firearm permit. If you're starting from scratch we'd love to be your school. We run our class small and the range time is real.",
   },
   {
     group: "train",
@@ -53,13 +53,13 @@ export const faq: FaqItem[] = [
     group: "train",
     question: "Can my employer pay for my training?",
     answer:
-      "Yes — we invoice employers directly when an organization enrolls multiple officers. Get in touch with the company name and number of seats and we'll send a quote.",
+      "Yes, we invoice employers directly when an organization enrolls multiple officers. Get in touch with the company name and number of seats and we'll send a quote.",
   },
   {
     group: "general",
     question: "What's your service area?",
     answer:
-      "We're based in Paramount and primarily serve Los Angeles and Orange counties. We'll travel further for larger contracts and events — call us with your details.",
+      "We're based in Paramount and primarily serve Los Angeles and Orange counties. We'll travel further for larger contracts and events. Call us with your details.",
   },
   {
     group: "general",

@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Request a Security Quote",
   description:
-    "Tell us about the post and we'll send a transparent quote — usually same business day. Uniformed guards, mobile patrol, event security, CCTV installation across Southern California.",
+    "Tell us about the post and we'll send a transparent quote, usually same business day. Uniformed guards, mobile patrol, event security, CCTV installation across Southern California.",
   path: "/request-quote",
   keywords: [
     "request security quote California",
@@ -19,7 +19,7 @@ export const metadata = buildMetadata({
 });
 
 const reassurances = [
-  "Same business day response — we read every inquiry.",
+  "Same business day response. We read every inquiry.",
   "Transparent pricing. No upselling officers you don't need.",
   "Coverage typically within 24–72 hours of a signed agreement.",
   "Insurance certificates available on request.",
@@ -31,7 +31,7 @@ export default function QuotePage() {
       <PageHero
         eyebrow="For Organizations"
         title="Request a security quote."
-        intro="The more detail you share, the more accurate the quote. If something doesn't apply, leave it blank — we'll follow up with the right questions."
+        intro="The more detail you share, the more accurate the quote. If something doesn't apply, leave it blank. We'll follow up with the right questions."
       />
 
       <section className="bg-bone-100">

@@ -23,7 +23,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Tell us how we can help."
-        intro="Hire security, enroll in a class, or ask a question — we respond same business day."
+        intro="Hire security, enroll in a class, or ask a question. We respond same business day."
       />
 
       <section className="bg-bone-100">

@@ -1,4 +1,4 @@
-// Stock photography references — Unsplash editorial photos.
+// Stock photography references: Unsplash editorial photos.
 // Centralized so each slot is easy to swap for real client photography later.
 // Replace any ID below with a custom photo (drop a file into /public/photos/
 // and switch the URL string to `/photos/your-file.jpg`).

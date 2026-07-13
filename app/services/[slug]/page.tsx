@@ -118,7 +118,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
                   Get a quote
                 </span>
                 <p className="mt-4 font-display text-lg tracking-[-0.015em] text-bone-50 sm:text-xl">
-                  Pricing is post-specific — coverage hours, armed status, and number of officers all factor in.
+                  Pricing is post-specific: coverage hours, armed status, and number of officers all factor in.
                 </p>
                 <p className="mt-3 text-sm text-bone-200/80">
                   Tell us the basics and we'll send a transparent quote, usually same business day.

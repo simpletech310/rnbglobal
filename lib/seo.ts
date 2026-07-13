@@ -30,9 +30,9 @@ export function buildMetadata({
   keywords?: string[];
 }): Metadata {
   const base = site.url.replace(/\/$/, "");
-  const fullTitle = path === "/" ? `${site.name} — ${site.tagline}` : `${title} | ${site.name}`;
+  const fullTitle = path === "/" ? `${site.name} - ${site.tagline}` : `${title} | ${site.name}`;
   const url = `${base}${path}`;
-  // Resolve the image to an absolute URL — required for OG/Twitter cards.
+  // Resolve the image to an absolute URL, required for OG/Twitter cards.
   const ogImage = (() => {
     if (!image) return `${base}/opengraph-image`;
     if (/^https?:\/\//i.test(image)) return image;

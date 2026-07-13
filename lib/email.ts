@@ -16,7 +16,7 @@ export async function sendEmail({ subject, html, replyTo, to: toOverride, attach
   const from = process.env.CONTACT_FROM_EMAIL || `${site.shortName} <onboarding@resend.dev>`;
 
   if (!apiKey) {
-    console.log("[email] RESEND_API_KEY not set — logging instead.");
+    console.log("[email] RESEND_API_KEY not set, logging instead.");
     console.log("[email] to:", to, "subject:", subject);
     if (attachments?.length) {
       console.log("[email] attachments:", attachments.map((a) => a.filename).join(", "));
@@ -69,10 +69,10 @@ const BRAND = {
 };
 
 /**
- * Wraps email body HTML in the branded R&B Global Security shell — dark header
+ * Wraps email body HTML in the branded R&B Global Security shell: dark header
  * with the real logo, white content card, footer with contact details.
  */
-// The custom domain (site.url) isn't resolving yet as of this writing — its DNS
+// The custom domain (site.url) isn't resolving yet as of this writing, its DNS
 // doesn't point at Vercel. Emails need an image URL that works today, so this
 // defaults to the Vercel deployment URL and can be overridden once the custom
 // domain is live.

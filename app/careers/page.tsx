@@ -5,9 +5,9 @@ import { site } from "@/content/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Careers — Security Guard Jobs in Southern California",
+  title: "Careers: Security Guard Jobs in Southern California",
   description:
-    "We're always hiring BSIS-licensed security guards across Los Angeles, Orange County, and the Inland Empire. Apply online — day, swing, and graveyard shifts available.",
+    "We're always hiring BSIS-licensed security guards across Los Angeles, Orange County, and the Inland Empire. Apply online: day, swing, and graveyard shifts available.",
   path: "/careers",
   keywords: [
     "security guard jobs Los Angeles",

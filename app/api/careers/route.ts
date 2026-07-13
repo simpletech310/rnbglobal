@@ -3,10 +3,10 @@ import { z } from "zod";
 import { sendEmail, emailShell, detailsTable, detailRow, escapeHtml } from "@/lib/email";
 import { site } from "@/content/site";
 
-// Testing address — switch to info@randbglobalsecurity.com (or set CAREERS_TO_EMAIL) when ready to go live.
+// Testing address, switch to info@randbglobalsecurity.com (or set CAREERS_TO_EMAIL) when ready to go live.
 const CAREERS_TO_EMAIL = process.env.CAREERS_TO_EMAIL || "wilform.thomas@gmail.com";
 
-const MAX_RESUME_BYTES = 4 * 1024 * 1024; // 4MB — headroom under Vercel's serverless request body limit
+const MAX_RESUME_BYTES = 4 * 1024 * 1024; // 4MB, headroom under Vercel's serverless request body limit
 const ALLOWED_RESUME_TYPES = new Set([
   "application/pdf",
   "application/msword",
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
     attachments = [{ filename: resumeFile.name || "resume", content: buf.toString("base64") }];
   }
 
-  const subject = `Guard application — ${d.firstName} ${d.lastName}`;
+  const subject = `Guard application: ${d.firstName} ${d.lastName}`;
 
   const internalHtml = emailShell({
     heading: subject,
@@ -135,10 +135,10 @@ export async function POST(req: Request) {
           If there's a fit, we'll reach out at ${escapeHtml(d.email)} or by phone. Questions in the meantime? Call us at
           <a href="${site.phoneHref}" style="color:#B57718;font-weight:600;text-decoration:none;">${site.phone}</a>.
         </p>
-        <p style="margin:20px 0 0;font-size:13px;color:#6B7589;">— The ${site.shortName} hiring team</p>
+        <p style="margin:20px 0 0;font-size:13px;color:#6B7589;">The ${site.shortName} hiring team</p>
       `,
     });
-    await sendEmail({ subject: `Application received — ${site.shortName}`, html: confirmHtml, to: d.email });
+    await sendEmail({ subject: `Application received - ${site.shortName}`, html: confirmHtml, to: d.email });
   } catch (err) {
     console.error("[careers] failed to send confirmation to applicant:", err);
   }

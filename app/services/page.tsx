@@ -16,7 +16,7 @@ const iconMap = {
 };
 
 export const metadata = buildMetadata({
-  title: "Security Services — Guards, Patrol, Events, CCTV",
+  title: "Security Services: Guards, Patrol, Events, CCTV",
   description:
     "Uniformed security guards, mobile patrol, event security, and CCTV installation across Los Angeles, Orange County, and the Inland Empire. BSIS-licensed, insured, owner-operated.",
   path: "/services",
@@ -90,7 +90,7 @@ export default function ServicesPage() {
 
       <CTASection
         title="Need coverage? Get a quote in 24 hours."
-        intro="Tell us about the post — property type, hours, armed or unarmed — and we'll respond same business day with a transparent quote."
+        intro="Tell us about the post: property type, hours, armed or unarmed, and we'll respond same business day with a transparent quote."
       />
     </>
   );

@@ -23,7 +23,7 @@ export default function PrivacyPage() {
             </p>
             <h2>Information we collect</h2>
             <p>
-              We only collect information you submit directly through our contact and quote forms — typically name, email, phone, organization, and the message you send us. We may also collect basic, anonymized usage analytics (page views, referrer) to improve the site.
+              We only collect information you submit directly through our contact and quote forms, typically name, email, phone, organization, and the message you send us. We may also collect basic, anonymized usage analytics (page views, referrer) to improve the site.
             </p>
             <h2>How we use it</h2>
             <p>

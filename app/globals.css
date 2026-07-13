@@ -63,14 +63,14 @@ body {
     @apply w-full sm:w-auto;
   }
 
-  /* Mono "operations" eyebrow — uppercase, tracked, slightly above caps-x. */
+  /* Mono "operations" eyebrow: uppercase, tracked, slightly above caps-x. */
   .eyebrow {
     @apply inline-flex items-center gap-2 font-mono text-[0.7rem] sm:text-xs uppercase tracking-[0.18em] text-ink-500;
   }
   .eyebrow-light { @apply text-bone-300; }
   .eyebrow-signal { @apply text-signal-500; }
 
-  /* Mono tag/badge — used for stats, "OPS // EST. 1998 // CA PPO" etc. */
+  /* Mono tag/badge: used for stats, "OPS // EST. 1998 // CA PPO" etc. */
   .mono-tag {
     @apply font-mono text-[0.7rem] uppercase tracking-[0.18em];
   }
@@ -94,7 +94,7 @@ body {
   }
 }
 
-/* Subtle entrance — applied via inline className. CSS only, no JS observers. */
+/* Subtle entrance, applied via inline className. CSS only, no JS observers. */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;

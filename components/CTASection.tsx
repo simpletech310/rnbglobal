@@ -60,7 +60,7 @@ export function CTASection({
               <div>
                 <h3 className="text-2xl text-bone-50 sm:text-3xl">Hire Security</h3>
                 <p className="mt-3 text-sm text-bone-200/80 sm:text-base">
-                  Uniformed guards, mobile patrol, event security, and CCTV install — staffed by vetted officers and backed by 24/7 dispatch.
+                  Uniformed guards, mobile patrol, event security, and CCTV install, staffed by vetted officers and backed by 24/7 dispatch.
                 </p>
               </div>
               <span className="mt-auto inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-signal-400">
@@ -82,7 +82,7 @@ export function CTASection({
               <div>
                 <h3 className="text-2xl text-bone-50 sm:text-3xl">Get Certified</h3>
                 <p className="mt-3 text-sm text-bone-200/80 sm:text-base">
-                  California Guard Card, exposed firearm permit, baton, CPR, and more — BSIS-aligned classes that put you to work.
+                  California Guard Card, exposed firearm permit, baton, CPR, and more, BSIS-aligned classes that put you to work.
                 </p>
               </div>
               <span className="mt-auto inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-signal-400">

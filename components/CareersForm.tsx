@@ -111,7 +111,7 @@ export function CareersForm() {
           <FormField label="California Guard Card?" htmlFor="guardCard">
             <Select id="guardCard" name="guardCard" defaultValue="">
               <option value="" disabled>Select one…</option>
-              <option value="yes">Yes — active</option>
+              <option value="yes">Yes, active</option>
               <option value="in-progress">In progress</option>
               <option value="no">No</option>
             </Select>
@@ -202,7 +202,7 @@ export function CareersForm() {
               <Textarea id="felonyExplanation" name="felonyExplanation" rows={3} />
             </FormField>
           )}
-          <FormField label="Professional references" htmlFor="references" hint="Name, relationship, phone — one per line.">
+          <FormField label="Professional references" htmlFor="references" hint="Name, relationship, phone, one per line.">
             <Textarea id="references" name="references" rows={4} />
           </FormField>
           <FormField label="Why do you want to work with R&B?" htmlFor="whyJoin">

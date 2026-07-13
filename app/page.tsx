@@ -80,7 +80,7 @@ const process = [
   {
     index: "03",
     title: "Officer deployment",
-    body: "Licensed, uniformed officers on post — briefed before shift one.",
+    body: "Licensed, uniformed officers on post, briefed before shift one.",
   },
   {
     index: "04",
@@ -143,7 +143,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-7 max-w-xl text-base text-bone-200/85 sm:text-lg lg:text-[1.15rem] lg:leading-relaxed">
-              {site.yearsExperience}+ years guarding Southern California — plus BSIS-aligned guard training.
+              {site.yearsExperience}+ years guarding Southern California, plus BSIS-aligned guard training.
             </p>
 
             <div className="mt-9 cta-row">
@@ -309,7 +309,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PILLARS — dark */}
+      {/* PILLARS: dark */}
       <section className="relative isolate overflow-hidden bg-ink-900 text-bone-50">
         <div
           aria-hidden
@@ -351,7 +351,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Industries"
               title="Properties we protect."
-              intro="Pick your property type — or get in touch for a custom plan."
+              intro="Pick your property type, or get in touch for a custom plan."
             />
             <Link
               href="/contact"
