@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container-x py-12 sm:py-16 lg:py-20">
         <div className="grid gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
-            <Logo tone="light" />
+            <Logo />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-bone-200/75">
               {site.description}
             </p>
